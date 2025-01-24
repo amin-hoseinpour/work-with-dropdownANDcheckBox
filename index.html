@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet"
+        type="text/css" />
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Vazirmatn;
+            direction: rtl;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 50px;
+        }
+
+        #myselect {
+            background-color: #f9f2ff;
+            color: #9b00ff;
+            padding: 8px 25px;
+            border: solid 1px #9b00ff;
+            border-radius: 8px;
+            font-size: 20px;
+        }
+
+        #myselect>option {
+            background-color: #ffffff;
+        }
+
+        .formlog {
+            display: none;
+            max-width: 270px;
+            background-color: aquamarine;
+            padding-bottom: 10PX;
+            border-radius: 8px;
+            padding: 5px;
+            box-shadow: 1px 1px 5px rgb(17, 209, 145);
+        }
+
+        input#login {
+            margin-left: 10px;
+            vertical-align: -3px;
+        }
+
+        .panel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .panel i {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <select name="" id="myselect">
+        <option value="start">استارت</option>
+        <option value="reset">ریست</option>
+    </select>
+    <br><br><br>
+    <form action="">
+        <input type="checkbox" name="" id="login">ورود توسط شبکه های اجتماعی
+    </form>
+    <div class="formlog">
+        <p>یکی از حالت های ورود زیر را انتخاب کنید</p>
+        <div class="panel">
+            <i class="fab  fa-github"></i>
+            <i class="fab  fa-google"></i>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(function () {
+            $('#myselect').change(function () {
+                if (this.value === 'start')
+                    $('body').css('background-color', 'red');
+                else if (this.value === 'reset')
+                    $('body').css('background-color', 'yellow');
+
+            });
+            $('input').change(function () {
+                $('.formlog').slideToggle();
+            });
+
+        });
+    </script>
+</body>
+
+</html>
